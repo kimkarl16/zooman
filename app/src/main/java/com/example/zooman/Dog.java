@@ -62,11 +62,12 @@ public class Dog extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode==101){
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 101) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(bitmap);
         }
-        if (requestCode==1){
+        if (requestCode == 1) {
             Uri uri = data.getData();
             imageView.setImageURI(uri);
         }
